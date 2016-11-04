@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+}
+
+html, body {
+    width: 100%;
+}
+
+h1,h2, h3, h4, h5, p, label, li, td, th, input, select, textarea {
+    font-family: Verdana, Arial;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+}
+h1,h2, h3, h4, h5 {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+h1  {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 24px;
+    line-height: 32px;
+}
+h2  {
+    font-size: 20px;
+    line-height: 26px;
+}
+h3  {
+    font-size: 16px;
+    line-height: 21px;
+}
+
+
+
+
+
+
+body {
+    padding-top: 40px;
+    background-color: #1e2b35;
+}
+
+form {
+    display: block;
+    width: 80%;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+form > label {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    color: #ffffff;
+}
+form > label > input[type="text"],
+form > label > textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+form > label > input[type="text"]:focus,
+form > label > textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+}
+form > input[type="submit"],
+form > input[type="button"]{
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #2a9dd2;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+form > input[type="submit"]:hover,
+form > input[type="button"]:hover {
+    background-color: #2486b3;
+}

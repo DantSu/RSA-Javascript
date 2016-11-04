@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSA Keygen</title>
+    <script type="text/javascript" language="JavaScript" src="/javascript/big-integer.min.js"></script>
+    <script type="text/javascript" language="JavaScript" src="/javascript/rsa-keygen.js"></script>
+    <script type="text/javascript" language="JavaScript" src="/javascript/rsa-encrypt.js"></script>
+    <script type="text/javascript" language="JavaScript" src="/javascript/rsa-decrypt.js"></script>
+    <script type="text/javascript" language="JavaScript" src="/javascript/index.js"></script>
+    <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen" />
+</head>
+<body>
+
+    <form onsubmit="return onGenerateKeySubmit(this);">
+        <input type="button" value="Generate Prime Number" onclick="return onGeneratePrimeNumber(this.form);" />
+        <label>First Big Prime Number : <input type="text" name="first_prime_number" /></label>
+        <label>Second Big Prime Number : <input type="text" name="second_prime_number" /></label>
+        <input type="submit" value="Find RSA Key" />
+        <label>Public Key : <input type="text" name="public_key" id="public_key" disabled="disabled" /></label>
+        <label>Private Key : <input type="text" name="private_key" id="private_key" disabled="disabled" /></label>
+    </form>
+
+    <form onsubmit="return onEncryptSubmit(this);">
+        <label>Message to encrypt : <textarea name="text_to_encrypt" cols="100" rows="15"></textarea></label>
+        <input type="submit" value="Encrypt my message" />
+        <label>My encrypted message : <textarea name="text_encrypted" cols="100" rows="15"></textarea></label>
+    </form>
+
+
+    <form onsubmit="return onDecryptSubmit(this);">
+        <label>Message to decrypt : <textarea name="text_to_decrypt" cols="100" rows="15"></textarea></label>
+        <input type="submit" value="Decrypt my message" />
+        <label>My decrypted message : <textarea name="text_decrypted" cols="100" rows="15"></textarea></label>
+    </form>
+
+</body>
+</html>
