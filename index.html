@@ -14,11 +14,11 @@
 
     <form onsubmit="return onGenerateKeySubmit(this);">
         <input type="button" value="Generate Prime Number" onclick="return onGeneratePrimeNumber(this.form);" />
-        <label>First Big Prime Number : <input type="text" name="first_prime_number" /></label>
-        <label>Second Big Prime Number : <input type="text" name="second_prime_number" /></label>
+        <label>First Big Prime Number : <input type="text" name="first_prime_number" disabled="disabled" /></label>
+        <label>Second Big Prime Number : <input type="text" name="second_prime_number" disabled="disabled" /></label>
         <input type="submit" value="Find RSA Key" />
-        <label>Public Key : <input type="text" name="public_key" id="public_key" disabled="disabled" /></label>
-        <label>Private Key : <input type="text" name="private_key" id="private_key" disabled="disabled" /></label>
+        <label>Public Key : <input type="text" name="public_key" id="public_key" /></label>
+        <label>Private Key : <input type="text" name="private_key" id="private_key" /></label>
     </form>
 
     <form onsubmit="return onEncryptSubmit(this);">
