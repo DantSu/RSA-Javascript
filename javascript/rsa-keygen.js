@@ -71,7 +71,7 @@ function RSAKeygen () {
 
 
     this.generatePrimeNumber = function(nbBit) {
-        var bigPrime = bigInt.randBetween(bigInt2.pow(bigInt(nbBit-1)), bigInt2.pow(bigInt(nbBit)));
+        var bigPrime = bigInt.randBetween(bigInt2.pow(bigInt(nbBit-1)), bigInt2.pow(bigInt(nbBit)).subtract(bigInt1));
 
         if(bigPrime.isEven())
             bigPrime = bigPrime.add(bigInt1);
