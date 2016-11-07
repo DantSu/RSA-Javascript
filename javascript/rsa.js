@@ -1,8 +1,12 @@
 function RSA(keys) {
 
     var longueurChaineEncode = 32, objectKeys = {},
-        bigInt0 = bigInt(0), bigInt1  = bigInt(1),   bigInt2     = bigInt(2),
-        bigInt3 = bigInt(3), bigInt10 = bigInt(10), bigInt100000 = bigInt(100000);
+        bigInt0 = bigInt(0), bigInt1 = bigInt(1), bigInt2 = bigInt(2),
+        bigInt3 = bigInt(3), bigInt5 = bigInt(5), bigInt7 = bigInt(7),
+        bigInt10 = bigInt(10), bigInt100000 = bigInt(100000);
+
+
+
     if(keys != undefined) {
         if (keys.publicKey != undefined) {
             var publicKey = keys.publicKey.replace(' ', '').split(',');
@@ -15,6 +19,9 @@ function RSA(keys) {
             objectKeys.privateN = bigInt(privateKey[1], 35);
         }
     }
+
+
+
 
     function euclideEtendu(a, b) {
         var r = a, r2 = b, u = bigInt1, u2 = bigInt0, v = bigInt0, v2 = bigInt1;
@@ -50,7 +57,7 @@ function RSA(keys) {
         if(n.equals(bigInt2) || n.equals(bigInt3))
             return true;
 
-        if(n.mod(bigInt2).equals(bigInt0) || n.lesser(2))
+        if( n.lesser(2) || n.mod(bigInt2).equals(bigInt0) || n.mod(bigInt3).equals(0) || n.mod(bigInt5).equals(0) || n.mod(bigInt7).equals(0))
             return false;
 
         var nSubtract1 = n.subtract(bigInt1), s = bigInt0, d = nSubtract1;
@@ -101,11 +108,15 @@ function RSA(keys) {
         return bigPrime.toString(35);
     }
 
+
+
+
+
     this.findKey = function(firstPrimeNumber, secondPrimeNumber) {
         var p = bigInt(firstPrimeNumber, 35), q = bigInt(secondPrimeNumber, 35);
 
         if(!temoinMiller(p, 10) || !temoinMiller(q, 10)) {
-            alert('It\'s not a prime number.');
+            console.error('RSA.findKey : Unable to find public and private keys. The params are\'nt prime number.');
             return false;
         }
 
@@ -125,7 +136,7 @@ function RSA(keys) {
     this.encrypt = function(string) {
 
         if(objectKeys.publicE == undefined || objectKeys.publicN == undefined) {
-            console.log('Unable tu crypt string. No public key found.');
+            console.error('RSA.encrypt : Unable to encrypt string. Public key not defined.');
             return false;
         }
 
@@ -161,7 +172,7 @@ function RSA(keys) {
 
     this.decrypt = function(string) {
         if(objectKeys.privateD == undefined || objectKeys.privateN == undefined) {
-            console.log('Unable to decrypt string. No private key found.');
+            console.error('RSA.decrypt : Unable to decrypt string. Private key not defined.');
             return false;
         }
 
