@@ -54,14 +54,14 @@ function RSA(keys) {
         }
     }
     function temoinMiller(n, k) {
-        if(n.equals(bigInt2) || n.equals(bigInt3))
+        if(n.equals(bigInt2) || n.equals(bigInt3) || n.equals(bigInt5) || n.equals(bigInt7))
             return true;
 
-        if( n.lesser(2) || n.mod(bigInt2).equals(bigInt0) || n.mod(bigInt3).equals(0) || n.mod(bigInt5).equals(0) || n.mod(bigInt7).equals(0))
+        if( n.lesser(2) || n.mod(bigInt2).equals(bigInt0) || n.mod(bigInt3).equals(bigInt0) || n.mod(bigInt5).equals(bigInt0) || n.mod(bigInt7).equals(bigInt0))
             return false;
 
         var nSubtract1 = n.subtract(bigInt1), s = bigInt0, d = nSubtract1;
-        while (d.mod(bigInt2).equals(0)) {
+        while (d.mod(bigInt2).equals(bigInt0)) {
             d = d.divide(bigInt2);
             s = s.add(bigInt1);
         }
