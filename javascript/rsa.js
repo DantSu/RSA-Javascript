@@ -40,7 +40,7 @@ function RSA(keys) {
             i = secondPN.add(bigInt1);
 
         while(1) {
-            var ruv = euclideEtendu(qn, i)
+            var ruv = euclideEtendu(qn, i);
 
             if(ruv.r == 1) {
                 if(ruv.v.lesser(bigInt0)) {
@@ -106,7 +106,7 @@ function RSA(keys) {
             bigPrime = bigPrime.add(bigInt2);
 
         return bigPrime.toString(35);
-    }
+    };
 
 
 
@@ -126,7 +126,7 @@ function RSA(keys) {
             publicKey : ed.e.toString(35) + ', ' + n.toString(35),
             privateKey : ed.d.toString(35) + ', ' + n.toString(35)
         };
-    }
+    };
 
 
 
@@ -163,7 +163,7 @@ function RSA(keys) {
             msgEncrypted += bigInt(asciiString.substr(i, longueurChaineEncode)).modPow(objectKeys.publicE, objectKeys.publicN).toString(35) + ' ';
         }
         return msgEncrypted.trim();
-    }
+    };
 
 
 
@@ -200,6 +200,6 @@ function RSA(keys) {
         }
 
         return decryptedChain;
-    }
+    };
 
 }
