@@ -10,7 +10,7 @@ Vous pouvez tester le code à l'adresse suivante : https://dantsu.github.io/RSA-
 
 Test 1
 
-```javascript
+```{r, fig.dim=c(5, 3)}
 let number = 1;
 ```
 
